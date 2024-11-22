@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Bakes Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Header Start -->
+    <div class="header">
+        <nav>
+            <input type="checkbox" id="show-search" />
+            <input type="checkbox" id="show-menu" />
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <div class="content">
+                <div class="logo">
+                    <a href="index.html"><img src="./images/LOGOCakes2.jpg" alt="Logo" /></a>
+                </div>
+                <ul class="links">
+                    <li><a href="index.html" >HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="product.html" id="first">PRODUCT</a></li>
+                    <li><a href="Contact.html">CONTACT</a></li>
+                    <li><a href="Review.html">REVIEWS</a></li>
+                </ul>
+            </div>
+            <div>
+                <label for="show-search" class="search-icon" style="padding: 15px;"><i class="fas fa-search"></i></label>
+                <a href="cart.html"><i class="fas fa-shopping-cart" style="padding: 15px;"></i></a>
+                <a href="login.html" class="fas fa-user" style="padding-left: 22px;"></a>
+            </div>
+            <form action="#" class="search-box">
+                <input type="text" placeholder="Search" required />
+                <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+            </form>
+        </nav>
+    </div>
+    <!-- Header End -->
+
+    <!-- Home Section Start -->
+    <div class="home">
+        <div class="main-text">
+            <h1>Enjoy<br />The Most Delicious Cakes</h1>
+            <p>Indulge in the finest selection of freshly baked cakes, crafted with passion and premium ingredients.</p>
+            <p>From delicate layers to rich, velvety textures, each bite is a moment of pure joy.</p>
+            <p>Let our cakes add sweetness to your special occasions or brighten your everyday moments.</p>
+            <button id="btn">View More</button>
+        </div>
+    </div>
+    <!-- Home Section End -->
+
+    <!-- Product Section Start -->
+    <section class="product" id="product">
+        <div class="main-txt">
+            <h3>PRODUCT</h3>
+        </div>
+        <div class="card-content">
+            <div class="row">
+                <a href="product-detail.html"><img src="./img2/produvct/tart trứng.jpg" alt="" /></a>
+                <div class="card-body">
+                    <h3>Egg Tart</h3>
+                    <p>1 piece</p>
+                    <h5>PRICE: 10.000 VND</h5>
+                    <button class="add-to-cart" data-name="Egg Tart" data-price="10000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/Tart trái cây.jpg" alt="Fruit Tart" />
+                <div class="card-body">
+                    <h3>Fruit Tart</h3>
+                    <p>1 piece</p>
+                    <h5>PRICE: 15.000 VND</h5>
+                    <button class="add-to-cart" data-name="Fruit Tart" data-price="15000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/sukem.jpg" alt="Cream Puffs" />
+                <div class="card-body">
+                    <h3>Cream Puffs</h3>
+                    <p>1 piece</p>
+                    <h5>PRICE: 5.000 VND</h5>
+                    <button class="add-to-cart" data-name="Cream Puffs" data-price="5000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/scone.jpg" alt="Scone" />
+                <div class="card-body">
+                    <h3>Scone</h3>
+                    <p>1 piece</p>
+                    <h5>PRICE: 30.000 VND</h5>
+                    <button class="add-to-cart" data-name="Scone" data-price="30000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/bánh sừng bò.jpg" alt="Croissants" />
+                <div class="card-body">
+                    <h3>Croissants</h3>
+                    <p>1 piece</p>
+                    <h5>PRICE: 30.000 VND</h5>
+                    <button class="add-to-cart" data-name="Croissants" data-price="30000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/Éclair.jpg" alt="Éclair" />
+                <div class="card-body">
+                    <h3>Éclair</h3>
+                    <p>1 piece</p>
+                    <h5>PRICE: 40.000 VND</h5>
+                    <button class="add-to-cart" data-name="Éclair" data-price="40000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <a href="product-detail-tiramisu.html">
+                    <img src="./img2/produvct/tiramisu.jpg" alt="Tiramisu">
+                <div class="card-body">
+                    <h3>Tiramisu</h3>
+                    <p>1 piece</p>
+                    <h5>PRICE: 35.000 VND</h5>
+                    <button class="add-to-cart" data-name="Tiramisu" data-price="35000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/Mousse.jpg" alt="Mousse" />
+                <div class="card-body">
+                    <h3>Mousse</h3>
+                    <p>1 piece</p>
+                    <h5>PRICE: 35.000 VND</h5>
+                    <button class="add-to-cart" data-name="Mousse" data-price="35000">BUY NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Banner Start -->
+    <div class="banner">
+        <div class="banner-content">
+            <h5>Get Discount Up To 30%</h5>
+            <h3>Best Deal For the Week</h3>
+            <p>Get up to 50% off this week. Don't miss!</p>
+            <button><a href="#products">ORDER</a></button>
+        </div>
+    </div>
+    <!-- Banner End -->
+
+    <!-- Sale Products Start -->
+    <section class="product" id="products" style="margin-top: 50px">
+        <div class="main-txt">
+            <h3>PRODUCTS UP TO 30% OFF</h3>
+        </div>
+        <div class="card-content">
+            <div class="row">
+                <img src="./img2/produvct/macaron.jpg" alt="Macarons" />
+                <div class="card-body">
+                    <h3>MACARONS</h3>
+                    <p>Box of 10 macarons</p>
+                    <h5>PRICE: 200.000 VND</h5>
+                    <button class="add-to-cart" data-name="Macarons" data-price="200000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/su vo gion.jpg" alt="Crispy Skin" />
+                <div class="card-body">
+                    <h3>CRISPY SKIN</h3>
+                    <p>Box of 4</p>
+                    <h5>PRICE: 60.000 VND</h5>
+                    <button class="add-to-cart" data-name="Crispy Skin" data-price="60000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/1HOPMousse.jpg" alt="Mousse & Cake" />
+                <div class="card-body">
+                    <h3>MOUSSE & CAKE</h3>
+                    <p>Set of 4 Mousse & Cake</p>
+                    <h5>PRICE: 300.000 VND</h5>
+                    <button class="add-to-cart" data-name="Mousse & Cake" data-price="300000">BUY NOW</button>
+                </div>
+            </div>
+            <div class="row">
+                <img src="./img2/produvct/ace1.jpg" alt="Mini Donut" />
+                <div class="card-body">
+                    <h3>MINI DONUT</h3>
+                    <p>Mini Donut Box of 9</p>
+                    <h5>PRICE: 60.000 VND</h5>
+                    <button class="add-to-cart" data-name="Mini Donut" data-price="60000">BUY NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sale Products End -->
+
+    <!-- Footer Start -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="logo">
+                <img src="./images/LOGOCakes3.jpg" alt="Logo" />
+            </div>
+            <p>We are always ready to listen and support you anytime, anywhere. Contact us for questions, feedback, or custom cake orders.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+            </div>
+        </div>
+        <hr />
+        <div class="footer-bottom-content">
+            <p><a href="#">GROUP 6</a></p>
+            <div class="copyright">
+                <p>&copy; 2023 <strong>SA Coding</strong>. ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script>
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existingProductIndex = cart.findIndex(item => item.name === name);
+            if (existingProductIndex >= 0) {
+                cart[existingProductIndex].quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${name} has been added to your cart!`);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", () => {
+                    const name = button.getAttribute("data-name");
+                    const price = parseInt(button.getAttribute("data-price"));
+                    addToCart(name, price);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

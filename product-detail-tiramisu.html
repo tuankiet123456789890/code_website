@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylebox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* CSS cho sản phẩm chi tiết */
+        .product-detail {
+            display: flex;
+            flex-direction: column; /* Đặt theo cột trên thiết bị di động */
+            align-items: center; /* Căn giữa nội dung */
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px; /* Khoảng cách giữa hình ảnh và thông tin sản phẩm */
+        }
+
+        .product-detail img {
+            max-width: 300px; /* Giới hạn chiều rộng tối đa cho hình ảnh */
+            height: auto; /* Tự động điều chỉnh chiều cao để duy trì tỉ lệ */
+            border-radius: 10px; /* Bo góc cho hình ảnh */
+        }
+
+        .product-detail h2 {
+            font-size: 24px;
+            color: #CF6A28;
+        }
+
+        .product-detail p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .add-to-cart {
+            background-color: #CF6A28;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #a6521a;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f1f1f1;
+        }
+
+        /* CSS cho Header và Menu */
+        .header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff; /* Màu nền của header */
+            padding: 10px 20px; /* Khoảng cách trong header */
+        }
+
+        .header .links {
+            list-style: none; /* Không hiển thị dấu chấm */
+            display: none; /* Ẩn menu theo mặc định */
+            gap: 20px; /* Khoảng cách giữa các mục */
+        }
+
+        /* Hiện thị menu khi checkbox được chọn */
+        #show-menu:checked + .content .links {
+            display: flex; /* Hiển thị menu */
+            flex-direction: column; /* Sắp xếp theo cột cho di động */
+            position: absolute; /* Vị trí tuyệt đối */
+            top: 60px; /* Vị trí dưới header */
+            left: 0;
+            right: 0;
+            background-color: white; /* Màu nền của menu */
+            z-index: 1000; /* Đảm bảo menu nằm trên các phần khác */
+        }
+
+        .header .links li a {
+            text-decoration: none; /* Không gạch chân */
+            color: #333; /* Màu chữ */
+            padding: 10px 15px; /* Khoảng cách trong các mục menu */
+            display: block; /* Hiển thị dạng khối để có thể dễ dàng nhấp chuột */
+        }
+
+        .header .links li a:hover {
+            background-color: #CF6A28; /* Màu nền khi di chuột */
+            color: white; /* Màu chữ khi di chuột */
+        }
+
+        /* Hiện menu cho desktop */
+        @media (min-width: 600px) {
+            .header .links {
+                display: flex; /* Hiện thị menu trên desktop */
+                flex-direction: row; /* Sắp xếp theo hàng cho desktop */
+            }
+
+            #show-menu {
+                display: none; /* Ẩn checkbox trên desktop */
+            }
+
+            .product-detail {
+                flex-direction: row; /* Đặt lại theo hàng trên desktop */
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // Điều chỉnh giao diện khi kích thước màn hình thay đổi
+            function adjustLayout() {
+                if ($(window).width() < 600) {
+                    $('.product-detail').css({
+                        'flex-direction': 'column',
+                        'align-items': 'center'
+                    });
+                } else {
+                    $('.product-detail').css({
+                        'flex-direction': 'row',
+                        'align-items': 'flex-start' // Đặt lại cho desktop
+                    });
+                }
+            }
+
+            // Gọi hàm khi tải trang và khi thay đổi kích thước cửa sổ
+            adjustLayout();
+            $(window).resize(adjustLayout);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="header">
+        <nav>
+            <input type="checkbox" id="show-search" />
+            <input type="checkbox" id="show-menu" />
+            <label for="show-menu" class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div class="content">
+                <div class="logo">
+                    <a href="index.html"><img src="./images/LOGOCakes2.jpg" alt=""></a>
+                </div>
+                <ul class="links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="product.html">PRODUCT</a></li>
+                    <li><a href="Contact.html">CONTACT</a></li>
+                    <li><a href="Review.html">REVIEWS</a></li>
+                </ul>
+            </div>
+            <div>
+                <label style="padding: 15px;" for="show-search" class="search-icon">
+                    <i class="fas fa-search"></i>
+                </label>
+                <a style="padding-left: 22px;" class="fas fa-user" href="login.html"></a>
+                <a style="padding-left: 22px;" class="fas fa-shopping-cart" href="cart.html"></a>
+            </div>
+            <form action="#" class="search-box">
+                <input type="text" placeholder="Search" required />
+                <button type="submit" class="go-icon">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </button>
+            </form>
+        </nav>
+    </div>
+
+    <div class="product-detail">
+        <h2>Tiramisu</h2>
+        <img src="./img2/produvct/tiramisu.jpg" alt="Tiramisu">
+        <div>
+            <p><strong>Price:</strong> 35.000 VND</p>
+            <p><strong>Description:</strong> Tiramisu is a famous Italian dessert, made from coffee powder, mascarpone and ladyfingers. This dish is usually served cold and has a delicious, rich flavor, creating a pleasant feeling when enjoyed.</p>
+            <p><strong>User manual:</strong> Can be enjoyed cold immediately after removing from the refrigerator. For best flavor, refrigerate for at least 4 hours before serving.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="logo">
+                <img src="./images/LOGOCakes3.jpg" alt="" />
+            </div>
+            <p>
+                We are always ready to listen and support you anytime, anywhere. 
+                If you have any questions about the product, comments or want to order a cake according to your own requirements, 
+                do not hesitate to contact us.
+            </p>
+            <p>
+                Our team is committed to responding quickly and wholeheartedly to bring you the best experience. 
+                Whether you need advice on flavors, cake sizes, or have a need for cooperation, we are always 
+                willing to support with dedication and professionalism.
+            </p>
+            <div class="socail-links">
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-pinterest-p"></i>
+            </div>
+        </div>
+        <hr />
+        <div class="footer-bottom-content">
+            <p><a href="#">GROUP 6</a></p>
+            <div class="copyright">
+                <p>&copy; Copyright <strong>SA Coding</strong>. ALL GROUP 6</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
